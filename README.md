@@ -1,13 +1,4 @@
-# Buttons_hack
-This project have simple implementation of some Buttons and Menus in Swing
+# Continue my hack 
+This project continue from where i left the button hacks at the following repo. https://www.github.com/hellsinglord22/Buttons_hack
 
-staff will be discussed 
--List box 
--List box data 
--Combo box 
--Check box 
--Radio button 
--Menus 
--Check box in menus 
--Menemonic and accelerators
--message box 
+so let's have some fun 
