@@ -27,6 +27,7 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setLayout(new BorderLayout());
+        setJMenuBar(createMenuBar());
 
 
         // position attributes on the frame (windows) //
@@ -36,6 +37,11 @@ public class MainFrame extends JFrame {
     }
 
     /*Methods*/
+    private JMenuBar createMenuBar() {
+        JMenuBar menuBar = new JMenuBar();
+
+        return menuBar;
+    }
 
 
 }
