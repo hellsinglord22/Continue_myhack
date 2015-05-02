@@ -2,6 +2,8 @@ import com.sun.glass.ui.win.WinDnDClipboard;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * @Author: Scorpion
@@ -64,6 +66,14 @@ public class MainFrame extends JFrame {
 
         // add staff to the 'showMenu'
         showMenu.add(personalDetails);
+
+        /// Add behaviour(s) ///
+        exitItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
 
 
         return menuBar;
