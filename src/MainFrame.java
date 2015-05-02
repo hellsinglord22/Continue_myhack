@@ -14,7 +14,7 @@ public class MainFrame extends JFrame {
     /*Attributes*/
     private Form mainFrameForm;
     private Container mainFrameContainer;
-
+    private JFileChooser mainFrameFileChooser;
 
     /* Constructor*/
 
@@ -24,6 +24,7 @@ public class MainFrame extends JFrame {
         /// Initialize attributes //
         mainFrameForm = new Form();
         mainFrameContainer = getContentPane();
+        mainFrameFileChooser = new JFileChooser();
 
         // position attributes on the frame (windows) //
         mainFrameContainer.add(mainFrameForm, BorderLayout.CENTER);
@@ -68,6 +69,7 @@ public class MainFrame extends JFrame {
         showMenu.add(personalDetails);
 
         /// Add behaviour(s) ///
+        /*exitItem behaviour */
         exitItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,6 +78,17 @@ public class MainFrame extends JFrame {
 
                 if (exitOption == JOptionPane.OK_OPTION) {
                     System.exit(0);
+                }
+            }
+        });
+
+
+        /*importDataItem behaviour*/
+        importDataItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (mainFrameFileChooser.showOpenDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
+                    System.out.println(mainFrameFileChooser.getSelectedFile());
                 }
             }
         });
