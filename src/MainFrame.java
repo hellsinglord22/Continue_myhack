@@ -21,6 +21,17 @@ public class MainFrame extends JFrame {
     public MainFrame(String title) {
         super(title);
 
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("couldn't load the looks and feels");
+        }
+
         /// Initialize attributes //
         mainFrameForm = new Form();
         mainFrameContainer = getContentPane();
