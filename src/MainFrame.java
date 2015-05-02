@@ -49,7 +49,7 @@ public class MainFrame extends JFrame {
         JMenu showMenu = new JMenu("Show");
         JMenuItem importDataItem = new JMenuItem("Import data...");
         JMenuItem exportDataItem = new JMenuItem("export data...");
-        JMenuItem exitItem = new JMenuItem("Exit");
+        final JMenuItem exitItem = new JMenuItem("Exit");
         JMenuItem personalDetails = new JMenuItem("personal details");
 
         menuBar.add(fileMenu);
@@ -71,7 +71,12 @@ public class MainFrame extends JFrame {
         exitItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                int exitOption = JOptionPane.showConfirmDialog(MainFrame.this, "Are you sure you want to exit?"
+                        , "Confirm exit", JOptionPane.OK_CANCEL_OPTION);
+
+                if (exitOption == JOptionPane.OK_OPTION) {
+                    System.exit(0);
+                }
             }
         });
 
